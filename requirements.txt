@@ -1,0 +1,13 @@
+Software Dependencies needed:
+
+Python 3.x: LLM development typically uses Python. Ensure you have a recent version installed.
+TensorFlow or PyTorch: These are popular deep learning frameworks used for building and training LLMs. Choose one based on your preference or familiarity.
+Langchain: This library facilitates interaction with Gemini for LLM tasks. Install it using pip install langchain.
+Additional Libraries: streamlit,PyPDF2,langchain_google_genai,dotenv,FAISS
+
+Hardware Resources: GPU, Sufficient RAM and Storage
+
+Data Requirements: Ensure to clean the data in prior before feeding to the model.
+
+we ran the model in python env with gemini api, which we retrived from "https://aistudio.google.com/app/apikey"
+
