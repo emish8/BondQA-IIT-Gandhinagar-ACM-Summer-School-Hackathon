@@ -42,9 +42,9 @@ def get_vector_store(text_chunks):
 
 def get_conversational_chain():
     prompt_template = """ Answer the question about electoral bonds from the context.
-    Answer in one word but solve the question step by step.
-    Context:\n {context}\n
-    Question: \n{question}\n
+    Answer in few words but solve the question step by step.
+    Context:\n{context}\n
+    Question:\n{question}\n
     Answer:
     """
     model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3, google_api_key="AIzaSyDx9kLslwGOzRjtNqoxoTk3T4aeYug-Tq8")
@@ -68,16 +68,17 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
+    # Display chat history
+    st.subheader("Chat History")
+    for question, response in st.session_state.chat_history:
+        st.write(f"**You:** {question}")
+        st.write(f"**Reply:** {response}")
+
     user_question = st.text_input("Ask a Question from the PDF Files")
     if user_question:
         response = user_input(user_question)
         st.session_state.chat_history.append((user_question, response))
     
-    # Display chat history
-    for question, response in st.session_state.chat_history:
-        st.write(f"**You:** {question}")
-        st.write(f"**Reply:** {response}")
-
     with st.sidebar:
         st.title("Menu:")
         pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
