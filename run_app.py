@@ -62,7 +62,7 @@ def user_input(user_question):
 
 def main():
     st.set_page_config(page_title="Chat with PDF")
-    st.header("Chat with PDF using Gemini")
+    st.header("BondQA: Chat with PDF using Gemini")
 
     # Initialize session state for chat history
     if "chat_history" not in st.session_state:
