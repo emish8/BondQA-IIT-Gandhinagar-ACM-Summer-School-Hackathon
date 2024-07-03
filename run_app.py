@@ -42,7 +42,7 @@ def get_vector_store(text_chunks):
 
 def get_conversational_chain():
     prompt_template = """ Answer the question about electoral bonds from the context.
-    Answer in few words but solve the question step by step.
+    Answer in one or two words but solve the question step by step.
     Context:\n{context}\n
     Question:\n{question}\n
     Answer:
